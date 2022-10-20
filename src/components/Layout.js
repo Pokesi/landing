@@ -4,17 +4,6 @@ import { Global, css } from "@emotion/core"
 import favicon from "../assets/favicon.ico"
 import twitter from "../assets/twitter.png"
 
-function getTitle(pathname) {
-  switch (pathname) {
-    case "/governance":
-      return "Governance"
-    case "/about":
-      return "About ENS"
-    default:
-      return "Ethereum Name Service"
-  }
-}
-
 export default function Layout({ children, data, location }) {
   return (
     <>
@@ -23,12 +12,12 @@ export default function Layout({ children, data, location }) {
           {
             name: "description",
             content:
-              "Your web3 username, a name for all your cryptocurrency addresses, and decentralised websites.",
+              "The first web3 username system on Fantom",
           },
           {
             name: "keywords",
             content:
-              "ENS, Ethereum, Ethereum Name Service, .eth domains, blockchain domains",
+              "Rave, Names, Rave Names, ENS, blockchain, names, domains, fantom, .ftm name, fantom domains, .ftm, ftm domains",
           },
           {
             name: "googlebot",
@@ -46,15 +35,15 @@ export default function Layout({ children, data, location }) {
           },
           {
             name: "twitter:title",
-            content: "Ethereum Name Service",
+            content: "Rave Names",
           },
           {
             name: "twitter:site",
-            content: "@ensdomains",
+            content: "@rave_names",
           },
           {
             property: "og:description",
-            content: "Your web3 username, a readable name for all your cryptocurrency addresses, and decentralised websites.",
+            content: "The first web3 username system on Fantom",
           },
           {
             property: "og:type",
@@ -62,36 +51,36 @@ export default function Layout({ children, data, location }) {
           },
           {
             property: "og:image",
-            content: `https://ens.domains/static/twitter-49d4bb2b55c07c5f5900e95860401fd0.png`,
+            content: `https://rave.domains/ogimage.png`,
           },
           {
             property: "og:image:alt",
-            content: `Ethereum Name Service`,
+            content: `Rave Names`,
           },
           {
             property: "og:image:width",
-            content: `390px`,
+            content: `1031px`,
           },
           {
             property: "og:image:height",
-            content: `258px`,
+            content: `487px`,
           },
           {
             property: "og:site_name",
-            content: `Ethereum Name Service`,
+            content: `Rave Names`,
           },
           {
             property: "og:title",
-            content: `Ethereum Name Service`,
+            content: `Rave Names`,
           },
           {
             property: "og:url",
-            content: `https://ens.domains`,
+            content: `https://rave.domains`,
           },
         ]}
-        title={getTitle(location.pathname)}
+        title={"Rave Names"}
         link={[
-          { rel: "shortcut icon", type: "image/x-icon", href: `${favicon}` },
+          { rel: "shortcut icon", type: "image/x-icon", href: `https://app.rave.domains/RaveBase.png` },
         ]}
       />
       <Global
@@ -100,7 +89,7 @@ export default function Layout({ children, data, location }) {
             height: ${location?.pathname === '/governance' ? '100%' : 'initial'};
           }
           body {
-            font-family: Overpass;
+            font-family: Inter;
           }
           #gatsby-focus-wrapper {
             height: 100vh;

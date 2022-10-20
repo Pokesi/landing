@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import logo from "../assets/ensLogo.svg"
 import logoText from "../assets/ensLogoText.svg"
+import { P } from "./Typography"
 
 const LogoContainer = styled("div")`
   height: 48px;
@@ -11,8 +12,9 @@ const LogoContainer = styled("div")`
     display: block;
   }
 
-  .ens-logo {
-    width: 35px;
+  .logo {
+    width: 75px;
+    height: 75px;
     margin-right: 10px;
   }
 
@@ -24,8 +26,7 @@ const LogoContainer = styled("div")`
 export default function Logo({ className }) {
   return (
     <LogoContainer className={className}>
-      <img src={logo} alt="ENS Logo" className="ens-logo" />
-      <img src={logoText} alt="ENS Logo text" className="ens-logo-text" />
+      <img src={'https://rave.domains/RaveBase.png'} alt="Rave Logo" className="logo" />
     </LogoContainer>
   )
 }

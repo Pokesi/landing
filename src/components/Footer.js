@@ -33,18 +33,13 @@ const FooterContainer = styled("footer")`
 const social = [
   {
     img: twitter,
-    text: "Twitter",
-    link: "https://twitter.com/ensdomains",
-  },
-  {
-    img: medium,
-    text: "Medium",
-    link: "https://medium.com/the-ethereum-name-service",
+    text: "",
+    link: "https://twitter.com/rave_names",
   },
   {
     img: github,
-    text: "GitHub",
-    link: "https://github.com/ensdomains",
+    text: "",
+    link: "https://github.com/rave-names",
   },
 ]
 
@@ -62,7 +57,7 @@ const ExternalLink = styled("a")`
   ${mq.medium`
     margin-bottom: 0px;
     padding: 0 25px 0;
-    border-right: solid 1px rgba(255, 255, 255, 0.5);
+    border-right: solid 1px rgba(255, 255, 255, 0);
     &:last-child {
       padding: 0 0 0 25px;
       border-right: none;
@@ -83,9 +78,15 @@ const SocialContainer = styled("div")`
 const MailTo = styled("a")`
   color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
+  transition-duration: 250ms;
+  transition-property: color;
 
   &:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, 1);
   }
 `
 
@@ -112,12 +113,9 @@ export default function Footer(props) {
         ))}
       </SocialContainer>
       <FooterColumn>
-        <MailTo href="mailto:press@ens.domains">press@ens.domains</MailTo>
-        <MailTo href="https://docs.ens.domains/bug-bounty-program">
-          Bug Bounty
-        </MailTo>
-        <MailTo href="https://raw.githubusercontent.com/ensdomains/media-kit/main/ENS%20Media%20Kit.zip">
-          Media Kit
+        <MailTo href="mailto:rave@fantoms.art">contact us</MailTo>
+        <MailTo href="https://t.me/OHMKI">
+          business enquiries
         </MailTo>
       </FooterColumn>
     </FooterContainer>

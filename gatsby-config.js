@@ -23,7 +23,7 @@ module.exports = {
         languages,
         defaultLanguage: "en",
         path: `${__dirname}/locales`,
-        siteUrl: "app.ens.domains",
+        siteUrl: "app.rave.domains",
         i18nextOptions: {
           debug: true,
           lng: "en",

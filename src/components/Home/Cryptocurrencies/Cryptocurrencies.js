@@ -9,7 +9,7 @@ import { Anchor, AnchorContainer } from "../../Anchor"
 
 const HeroContainer = styled("div")`
   padding: 120px 20px 0px 20px;
-  background: white;
+  background: rgb(0,0,0,0.1);
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -29,13 +29,15 @@ const WalletAnimation = styled("div")`
   align-items: center;
   width: 500%;
   overflow: hidden;
+  height: 120px;
   position: relative;
+  left: -195%;
   &:before {
     display: block;
     content: "";
     height: 100%;
-    width: 4px;
-    background: white;
+    width: 0px;
+    background: transparent;
     position: absolute;
     left: 0;
     top: 0;
@@ -76,7 +78,26 @@ const Coins = styled(motion.div)`
 const rawCoins = importAll(
   require.context("./coins", false, /\.(png|jpe?g|svg)$/)
 )
-const coins = [...rawCoins, ...rawCoins, ...rawCoins]
+
+// credit: https://stackoverflow.com/a/2450976
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+  for (let i=0; i < array.length; i++) {
+    if (array[i] === array[i+1] || array[i] === array[i+2]) {
+      // this will not work for larger arrays
+      shuffle(array);
+    }
+  }
+  return array;
+}
+
+const coins = shuffle([...rawCoins, ...rawCoins, ...rawCoins]);
 
 export default function Cryptocurrencies(props) {
   const { scrollYProgress } = useViewportScroll()
@@ -87,14 +108,12 @@ export default function Cryptocurrencies(props) {
       <Wrapper>
         <AnchorContainer href={"#home-title"}>
           <H2>
-            {t("home.cryptocurrencies.title")}
-            <Anchor />
+            Use your name everywhere
           </H2>
         </AnchorContainer>
-        <P>{t("home.cryptocurrencies.text")}</P>
+        <P>Set multichain addresses in your Rave Name, and never have to worry about copy-pasting addresses again</P>
 
         <WalletAnimation>
-          <img className="wallet" src={wallet} alt={t("wallet")} />
           <Coins style={{ x: x }}>
             {coins.map((coin, index) => {
               return <img src={coin.src.default} alt={coin.name} key={index} />

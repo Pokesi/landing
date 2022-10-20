@@ -13,20 +13,16 @@ import TraditionalDomains from "../components/Home/TraditionalDomains/"
 import GetInvolved from "../components/GetInvolved"
 import Footer from "../components/Footer"
 import Layout from "../components/Layout"
+import styled from "@emotion/styled"
 
 export default function Home(props) {
   return (
     <Layout {...props}>
       <Navigation />
       <Hero />
-      <Carousel />
       <PortableUsername />
-      <Statistics />
       <Cryptocurrencies />
       <DecentralisedWebsites />
-      <TraditionalDomains />
-      <Ecosystem />
-      <GetInvolved />
       <Footer />
     </Layout>
   )

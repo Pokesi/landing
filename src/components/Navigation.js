@@ -9,7 +9,7 @@ import mq from "../mediaQuery"
 import LanguageSwitcher from "./LanguageSwitcher"
 
 const Nav = styled("nav")`
-  background-image: linear-gradient(90deg, #513eff 0%, #52e5ff 100%);
+  background-image: linear-gradient(90deg, #03045e 0%, #ECc052 100%);
   ${p =>
     p.menuOpen &&
     `
@@ -152,7 +152,7 @@ const Links = styled("div")`
 
 const MobileLinks = styled("ul")`
   background: #121d46;
-  font-family: Overpass;
+  font-family: Inter;
   font-size: 22px;
   color: #ffffff;
   text-align: center;
@@ -223,36 +223,22 @@ export default function Navigation() {
       </div>
 
       <Links menuOpen={menuOpen}>
-        <a href="/governance">Governance</a>
-        <a href="https://chat.ens.domains/">Community</a>
-        <Link to="/about">Team</Link>
-        <Link to="/jobs">Jobs</Link>
-        <a href="https://docs.ens.domains/">Docs</a>
+        <a href="https://rave.cyou/">Community</a>
+        <a href="https://docs.rave.domains/">Docs</a>
 
         <Separator />
-        <LanguageSwitcher />
-        <Launch href="https://app.ens.domains">{t("nav.launch")}</Launch>
+        <Launch href="https://app.rave.domains">{t("nav.launch")}</Launch>
       </Links>
 
       <MobileLinks menuOpen={menuOpen}>
-        <LanguageSwitcher mobile={true} />
         <li>
-          <a href="/governance">Governance</a>
+          <a href="https://rave.cyou/">Community</a>
         </li>
         <li>
-          <a href="https://chat.ens.domains/">Community</a>
+          <a href="https://docs.rave.domains/">Docs</a>
         </li>
         <li>
-          <Link to="/about">Team</Link>
-        </li>
-        <li>
-          <Link to="/jobs">Jobs</Link>
-        </li>
-        <li>
-          <a href="https://docs.ens.domains/">Docs</a>
-        </li>
-        <li>
-          <Launch href="https://app.ens.domains">{t("nav.launch")}</Launch>
+          <Launch href="https://app.rave.domains">{t("nav.launch")}</Launch>
         </li>
       </MobileLinks>
     </Nav>

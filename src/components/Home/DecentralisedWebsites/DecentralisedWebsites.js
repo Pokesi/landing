@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
 import { H2, P, Button } from "../../Typography"
 
-import website1 from "./website1.png"
+import website1 from "./website1.svg"
 import website2 from "./website2.png"
 import website3 from "./website3.png"
 import blur1 from "./blur1.jpg"
@@ -13,7 +13,7 @@ import blur2 from "./blur2.jpg"
 import { Anchor, AnchorContainer } from "../../Anchor"
 
 const Container = styled("div")`
-  background: white;
+  background: rgb(0,0,0,0.1);
   padding: 120px 20px 30px 20px;
   display: flex;
   flex-direction: column;
@@ -35,7 +35,13 @@ const ImageAnimation = styled("div")`
 
 const ImageTransition = styled("div")`
   position: relative;
-  margin: 0 20px;
+  margin: 0 0px;
+
+  img {
+    width: 250px;
+    margin-left: -30px;
+  }
+
   img:nth-child(1) {
     left: 10px;
     top: 10px;
@@ -61,27 +67,19 @@ export default function DecentralisedWebsites(props) {
     <Container id="home-decentralised-websites">
       <AnchorContainer href={"#home-decentralised-websites"}>
         <H2>
-          {t("home.decentralisedWebsites.title")}
+          Host a website on your Rave Name
           <Anchor />
         </H2>
       </AnchorContainer>
 
-      <P>{t("home.decentralisedWebsites.text")}</P>
+      <P>Using IPFS and Rave, you can host a website and use your Name as a domain for it.</P>
       <ImageAnimation ref={ref}>
-        <ImageTransition>
-          <motion.img src={website2} style={{ opacity: inView ? 0 : 1 }} />
-          <motion.img src={blur1} style={{ opacity: inView ? 1 : 0 }} />
-        </ImageTransition>
         <ImageTransition>
           <img src={website1} alt={t("website")} />
         </ImageTransition>
-        <ImageTransition>
-          <motion.img src={website3} animate={{ opacity: inView ? 0 : 1 }} />
-          <motion.img src={blur2} animate={{ opacity: inView ? 1 : 0 }} />
-        </ImageTransition>
       </ImageAnimation>
-      <Button href="https://medium.com/the-ethereum-name-service/cloudflare-and-fleek-make-ens-ipfs-site-deployment-as-easy-as-ever-262c990a7514">
-        {t("c.learnMore")}
+      <Button href="https://app.rave.domains/">
+        Open app
       </Button>
     </Container>
   )

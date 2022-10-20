@@ -12,10 +12,12 @@ import avatar from "./avatar.png"
 
 const HeroContainer = styled("div")`
   padding: 120px 20px;
-  background: white;
+  padding-bottom: 0px;
+  background: rgb(0,0,0,0.1);
   display: flex;
   justify-content: center;
   overflow: hidden;
+  z-index: -1;
 `
 
 const Wrapper = styled("div")`
@@ -75,7 +77,7 @@ const Avatar = () => {
         const opacity =
           ((containerOneTop - window.innerHeight / 2 - window.innerHeight / 4) /
             window.innerHeight) *
-          4
+          4 + 1.25
         const opacityTwo = 1 - opacity - 1
         containerRefOne.current.style.opacity = opacity
         containerRefTwo.current.style.opacity = opacityTwo
@@ -87,11 +89,11 @@ const Avatar = () => {
     <AvatarContainer>
       <AvatarContainerInner ref={containerRefOne}>
         <AvatarImg src={avatar} />
-        <AvatarText>0x98...674</AvatarText>
+        <AvatarText>0x3e5...37d</AvatarText>
       </AvatarContainerInner>
       <AvatarContainerInner ref={containerRefTwo} style={{ opacity: 0 }}>
-        <AvatarImg src={nickAvatar} />
-        <AvatarText>nick.eth</AvatarText>
+        <AvatarImg src={"https://mint.fantoms.art/imagesa/0.png"} />
+        <AvatarText>z.ftm</AvatarText>
       </AvatarContainerInner>
     </AvatarContainer>
   )
@@ -104,11 +106,11 @@ export default function PortableUsername(props) {
       <Wrapper>
         <AnchorContainer href={"#portable-title"}>
           <H2>
-            {t("home.portableUsername.title")}
+            Reinvent your identity
             <Anchor />
           </H2>
         </AnchorContainer>
-        <P>{t("home.portableUsername.text")}</P>
+        <P>Own your identity on-chain, and customize it on the fly. Rave Names allows you to set an avatar, and other profile data.</P>
         <Gap size={10} />
         <Avatar />
       </Wrapper>

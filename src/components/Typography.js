@@ -2,8 +2,8 @@ import styled from "@emotion/styled"
 import mq from "../mediaQuery"
 
 export const H2 = styled("h2")`
-  font-family: Overpass;
-  font-weight: 300;
+  font-family: Inter;
+  font-weight: 400;
   font-size: 28px;
   margin-top: 0;
   margin-bottom: 20px;
@@ -28,7 +28,7 @@ export const P = styled("p")`
 `
 
 export const Button = styled("a")`
-  background: #5284ff;
+  background: #03045e;
   box-shadow: 0 10px 21px 0 rgba(38, 61, 145, 0.26);
   border-radius: 23px;
   font-family: Overpass;
