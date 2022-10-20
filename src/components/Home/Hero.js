@@ -63,7 +63,7 @@ export default function Hero(props) {
         <DAOBannerContent />
       </MainPageBannerContainer>*/}
       <Title><b>Rave Names is {text}</b></Title>
-      <A href="https://app.rave.domains/"><Launch>Get a .ftm Name</Launch></A>
+      <a href="https://app.rave.domains/" style={{ textDecoration : 'none' }}><Launch>Get a .ftm Name</Launch></a>
     </HeroContainer>
   )
 }
