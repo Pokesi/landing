@@ -15,7 +15,6 @@ const languages = [
 ]
 
 module.exports = {
-  pathPrefix: '__GATSBY_IPFS_PATH_PREFIX__',
   plugins: [
     {
       // including a plugin from outside the plugins folder needs the path to it
@@ -43,7 +42,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
-    'gatsby-plugin-ipfs',
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
